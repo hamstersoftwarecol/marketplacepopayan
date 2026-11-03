@@ -1,0 +1,109 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "marketplace-popayan-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-03",
+  "vars": {
+    "APP_ENV": "development",
+    "ALLOWED_ORIGINS": "http://localhost:8080",
+    "MAIL_FROM": ""
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "marketplace",
+      "database_id": "00000000-0000-0000-0000-000000000001",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "00000000000000000000000000000001"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "LIVE",
+        "class_name": "LiveHub"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "LiveHub"
+      ]
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "* * * * *"
+    ]
+  },
+  "observability": {
+    "enabled": true
+  },
+  "env": {
+    "staging": {
+      "name": "marketplace-popayan-staging",
+      "vars": {
+        "APP_ENV": "staging",
+        "ALLOWED_ORIGINS": "http://localhost:8080,https://marketplace-popayan-app.business-alejandrolopezmurillo.workers.dev",
+        "MAIL_FROM": ""
+      },
+      "durable_objects": {
+        "bindings": [
+          {
+            "name": "LIVE",
+            "class_name": "LiveHub"
+          }
+        ]
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "marketplace-popayan-staging",
+          "database_id": "244d0056-7485-4490-9a05-7e8cca09db1e",
+          "migrations_dir": "migrations"
+        }
+      ],
+      "kv_namespaces": [
+        {
+          "binding": "CACHE",
+          "id": "101c363087ef45299a9206f985fa8ebb"
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "PHOTOS",
+          "bucket_name": "marketplace-popayan-staging-photos"
+        }
+      ]
+    },
+    "production": {
+      "name": "marketplace-popayan-production",
+      "vars": {
+        "APP_ENV": "production",
+        "ALLOWED_ORIGINS": "",
+        "MAIL_FROM": ""
+      },
+      "durable_objects": {
+        "bindings": [
+          {
+            "name": "LIVE",
+            "class_name": "LiveHub"
+          }
+        ]
+      }
+    }
+  },
+  "r2_buckets": [
+    {
+      "binding": "PHOTOS",
+      "bucket_name": "marketplace-local-photos"
+    }
+  ]
+}

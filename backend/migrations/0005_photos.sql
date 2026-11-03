@@ -1,0 +1,2 @@
+CREATE TABLE photos(id TEXT PRIMARY KEY,owner_id TEXT NOT NULL REFERENCES users(id),created_at INTEGER NOT NULL);
+ALTER TABLE products ADD COLUMN photo_ids TEXT NOT NULL DEFAULT '[]';

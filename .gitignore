@@ -1,0 +1,15 @@
+node_modules/
+.wrangler/
+.dev.vars
+.env
+coverage/
+.DS_Store
+.dev.vars.*
+.env.*
+!.env.example
+!.dev.vars.example
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+key.properties

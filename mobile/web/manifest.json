@@ -1,0 +1,35 @@
+{
+  "name": "Marketplace Popayán",
+  "short_name": "Popayán",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#F6F7F2",
+  "theme_color": "#135E4B",
+  "description": "Compra y vende con tu comunidad en Popayán.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/Icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

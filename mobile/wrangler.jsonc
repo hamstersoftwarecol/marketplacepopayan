@@ -1,0 +1,6 @@
+{
+ "$schema":"../backend/node_modules/wrangler/config-schema.json",
+ "name":"marketplace-popayan-app",
+ "compatibility_date":"2026-11-03",
+ "assets":{"directory":"./build/web","not_found_handling":"single-page-application"}
+}
